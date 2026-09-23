@@ -1,0 +1,388 @@
+/* ===========================================================
+   Restoran Nia Food — stylesheet bersama
+   Palet   : kertas hangat + hijau daun pisang + oranye rempah
+   Font    : Fraunces (judul) + Work Sans (isi)
+   =========================================================== */
+
+:root {
+  --paper:      #FBF6EC;
+  --paper-dim:  #F1E9D8;
+  --ink:        #2B3327;
+  --ink-soft:   #5B6553;
+  --leaf:       #6E7F4E;
+  --leaf-dark:  #4B5936;
+  --spice:      #C1521D;
+  --spice-dark: #9A3F14;
+  --gold:       #D9A544;
+  --line:       #DCD2B8;
+  --white:      #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  color: var(--ink);
+  margin: 0 0 0.4em 0;
+  line-height: 1.15;
+}
+
+h1 { font-weight: 600; }
+h2 { font-weight: 600; font-size: 1.7rem; }
+h3 { font-weight: 600; font-size: 1.25rem; color: var(--leaf-dark); }
+
+p { max-width: 68ch; }
+
+a { color: var(--spice); text-decoration: none; border-bottom: 1px solid transparent; }
+a:hover, a:focus { border-bottom-color: var(--spice); }
+
+/* ---------- Header & navigasi ---------- */
+
+.site-header {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 1.1rem 1.5rem;
+}
+
+.header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.brand {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--paper);
+  letter-spacing: 0.01em;
+}
+
+.brand span { color: var(--gold); }
+
+.site-nav {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: var(--paper);
+  opacity: 0.85;
+  font-size: 0.98rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  opacity: 1;
+  border-bottom-color: var(--gold);
+}
+
+.site-nav a[aria-current="page"] {
+  opacity: 1;
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ---------- Hero (halaman depan) ---------- */
+
+.hero {
+  background: linear-gradient(180deg, var(--leaf-dark) 0%, var(--leaf) 100%);
+  color: var(--paper);
+  padding: 3.2rem 1.5rem 3.6rem;
+}
+
+.hero-inner { max-width: 980px; margin: 0 auto; }
+
+.hero h1 {
+  color: var(--paper);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  max-width: 14ch;
+}
+
+.hero p {
+  color: #E7EDD9;
+  max-width: 52ch;
+  font-size: 1.08rem;
+}
+
+.hero-divider {
+  width: 64px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin: 1.1rem 0 1.4rem;
+}
+
+/* ---------- Page banner (halaman lain) ---------- */
+
+.page-banner {
+  background: var(--leaf-dark);
+  color: var(--paper);
+  padding: 2.2rem 1.5rem;
+}
+
+.page-banner .inner { max-width: 980px; margin: 0 auto; }
+
+.page-banner h1 { color: var(--paper); font-size: clamp(1.7rem, 3.5vw, 2.3rem); }
+.page-banner p { color: #E7EDD9; margin-top: 0.4rem; }
+
+/* ---------- Layout umum ---------- */
+
+main { max-width: 980px; margin: 0 auto; padding: 2.6rem 1.5rem 3rem; }
+
+section { margin-bottom: 2.6rem; }
+
+.section-label {
+  text-transform: none;
+  font-size: 0.95rem;
+  color: var(--spice-dark);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1.6rem 1.8rem;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+@media (max-width: 680px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+/* ---------- Menu (nested list) ---------- */
+
+.menu-categories {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.menu-categories > li {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--spice);
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem 1.3rem;
+}
+
+.menu-categories > li:nth-child(2) { border-left-color: var(--leaf); }
+.menu-categories > li:nth-child(3) { border-left-color: var(--gold); }
+
+.menu-categories h3 { margin-bottom: 0.15rem; }
+
+.menu-categories .kategori-ket {
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  margin: 0 0 0.7rem 0;
+}
+
+.menu-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.menu-items li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px dashed var(--line);
+  padding-bottom: 0.5rem;
+}
+
+.menu-items li:last-child { border-bottom: none; padding-bottom: 0; }
+
+.menu-items .nama-item { color: var(--ink); }
+.menu-items .harga-item { color: var(--spice-dark); font-weight: 600; white-space: nowrap; }
+
+/* ---------- Langkah pemesanan (ordered list) ---------- */
+
+..langkah-pesan li {
+  counter-increment: langkah;
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.9rem 1.2rem;
+}
+
+.langkah-pesan strong {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+}
+
+.langkah-pesan span {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+  text-align: justify;
+  white-space: normal;
+}
+/* ---------- Daftar biasa (misi, fasilitas, kontak) ---------- */
+
+ul.simple-list {
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+/* ---------- Galeri ---------- */
+
+.galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+}
+
+.galeri-grid figure {
+  margin: 0;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.galeri-grid img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+  background: var(--paper-dim);
+}
+
+.galeri-grid figcaption {
+  padding: 0.7rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.video-wrap {
+  margin: 1rem 0 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  max-width: 640px;
+}
+
+.video-wrap video { display: block; width: 100%; height: auto; background: #000; }
+
+/* ---------- Kontak ---------- */
+
+.kontak-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6rem;
+}
+
+@media (max-width: 680px) {
+  .kontak-grid { grid-template-columns: 1fr; }
+}
+
+.kontak-grid dt {
+  font-weight: 600;
+  color: var(--leaf-dark);
+  margin-top: 0.9rem;
+}
+
+.kontak-grid dt:first-child { margin-top: 0; }
+
+.kontak-grid dd { margin: 0.1rem 0 0; color: var(--ink); }
+
+.jam-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.97rem;
+}
+
+.jam-table td { padding: 0.4rem 0; border-bottom: 1px dashed var(--line); }
+.jam-table tr:last-child td { border-bottom: none; }
+.jam-table td:last-child { text-align: right; color: var(--ink-soft); }
+
+.map-placeholder {
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  background: var(--paper-dim);
+  color: var(--ink-soft);
+  padding: 2.4rem 1.2rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* ---------- CTA ---------- */
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.96rem;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
+}
+
+.btn-primary:hover { background: transparent; color: var(--gold); border-color: var(--gold); }
+
+.btn-outline {
+  color: var(--paper);
+  border-color: var(--paper);
+}
+
+.btn-outline:hover { background: var(--paper); color: var(--leaf-dark); }
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 1.6rem 1.5rem 2rem;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
