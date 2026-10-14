@@ -7,6 +7,105 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+    /* Styling khusus tabel daftar menu */
+    .menu-table-container {
+        overflow-x: auto;
+        margin-top: 2rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        border-radius: 8px;
+    }
+    .menu-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        background-color: #fff;
+        font-family: 'Work Sans', sans-serif;
+    }
+    .menu-table th, .menu-table td {
+        padding: 14px 18px;
+        border-bottom: 1px solid #eaeaea;
+    }
+    .menu-table th {
+        background-color: #2c2c2c;
+        color: #ffffff;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+    }
+    .menu-table tr:hover {
+        background-color: #f9f9f9;
+    }
+    .menu-table td.harga-col {
+        font-weight: 600;
+        color: #b85d19;
+    }
+
+    /* Styling Form Pemesanan (Tugas Praktikum Pertemuan 8) */
+    .form-pemesanan-container {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        margin-top: 2rem;
+        max-width: 700px;
+    }
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #2c2c2c;
+    }
+    .form-control {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        box-sizing: border-box;
+        font-family: 'Work Sans', sans-serif;
+    }
+    .form-control:focus {
+        border-color: #b85d19;
+        outline: none;
+    }
+    .checkbox-item-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+    .checkbox-item-row label {
+        margin-bottom: 0;
+        min-width: 100px;
+        font-weight: 500;
+    }
+    .input-qty {
+        width: 90px;
+        padding: 6px 10px;
+    }
+    .payment-options {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 1rem;
+    }
+    .payment-option-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-weight: 500;
+    }
+    .payment-logo {
+        height: 24px;
+        vertical-align: middle;
+    }
+</style>
 </head>
 <body>
 
@@ -48,33 +147,63 @@
             minuman, dan dessert. Semua menu dibuat segar setiap hari menggunakan bahan pilihan.
         </p>
 
-        <ul class="menu-categories">
-            <li>
-                <h3>Makanan</h3>
-                <p class="kategori-ket">Hidangan utama, cocok untuk makan siang maupun malam.</p>
-                <ul class="menu-items">
-                    <li><span class="nama-item">Nasi Goreng Spesial</span><span class="harga-item">$2.00</span></li>
-                    <li><span class="nama-item">Mie Goreng</span><span class="harga-item">$1.50</span></li>
-                    <li><span class="nama-item">Ayam Bakar</span><span class="harga-item">$3.00</span></li>
-                </ul>
-            </li>
-            <li>
-                <h3>Minuman</h3>
-                <p class="kategori-ket">Penyegar untuk menemani hidangan Anda.</p>
-                <ul class="menu-items">
-                    <li><span class="nama-item">Es Teh Manis</span><span class="harga-item">$0.50</span></li>
-                    <li><span class="nama-item">Jus Jeruk</span><span class="harga-item">$1.00</span></li>
-                </ul>
-            </li>
-            <li>
-                <h3>Dessert</h3>
-                <p class="kategori-ket">Penutup manis setelah menyantap hidangan utama.</p>
-                <ul class="menu-items">
-                    <li><span class="nama-item">Pisang Goreng Keju</span><span class="harga-item">$1.50</span></li>
-                    <li><span class="nama-item">Es Campur</span><span class="harga-item">$2.00</span></li>
-                </ul>
-            </li>
-        </ul>
+        <!-- Tabel Daftar Menu -->
+        <div class="menu-table-container">
+            <table class="menu-table">
+                <thead>
+                    <tr>
+                        <th>KATEGORI</th>
+                        <th>NAMA MENU</th>
+                        <th>KETERANGAN</th>
+                        <th>HARGA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Makanan</td>
+                        <td>Nasi Goreng Spesial</td>
+                        <td>Hidangan utama dengan telur dan suwiran ayam</td>
+                        <td class="harga-col">$2.00</td>
+                    </tr>
+                    <tr>
+                        <td>Makanan</td>
+                        <td>Mie Goreng</td>
+                        <td>Mie kenyal gurih dengan sayuran segar</td>
+                        <td class="harga-col">$1.50</td>
+                    </tr>
+                    <tr>
+                        <td>Makanan</td>
+                        <td>Ayam Bakar</td>
+                        <td>Ayam bakar bumbu kecap manis gurih</td>
+                        <td class="harga-col">$3.00</td>
+                    </tr>
+                    <tr>
+                        <td>Minuman</td>
+                        <td>Es Teh Manis</td>
+                        <td>Penyegar es teh manis dingin</td>
+                        <td class="harga-col">$0.50</td>
+                    </tr>
+                    <tr>
+                        <td>Minuman</td>
+                        <td>Jus Jeruk</td>
+                        <td>Jus jeruk murni segar kaya vitamin C</td>
+                        <td class="harga-col">$1.00</td>
+                    </tr>
+                    <tr>
+                        <td>Dessert</td>
+                        <td>Pisang Goreng Keju</td>
+                        <td>Pisang crispy taburan keju melimpah</td>
+                        <td class="harga-col">$1.50</td>
+                    </tr>
+                    <tr>
+                        <td>Dessert</td>
+                        <td>Es Campur</td>
+                        <td>Es penutup segar aneka buah dan agar-agar</td>
+                        <td class="harga-col">$2.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
     <section>
@@ -110,6 +239,87 @@
                 <span>Ambil pesanan di kasir, atau tunggu diantar jika memilih layanan antar.</span>
             </li>
         </ol>
+    </section>
+
+    <!-- Section Form Pemesanan (Tugas Praktikum Pertemuan 8) -->
+    <section id="form-pemesanan">
+        <p class="section-label">Form Pemesanan</p>
+        <h2>Isi Form Untuk Melakukan Pemesanan</h2>
+        
+        <div class="form-pemesanan-container">
+            <form action="#" method="POST">
+                
+                <!-- Textbox Nama Lengkap -->
+                <div class="form-group">
+                    <label for="nama_lengkap">Nama Lengkap:</label>
+                    <input type="text" id="nama_lengkap" name="nama_lengkap" class="form-control" placeholder="Masukkan nama lengkap Anda" required>
+                </div>
+
+                <!-- Textbox No HP -->
+                <div class="form-group">
+                    <label for="no_hp">No HP:</label>
+                    <input type="tel" id="no_hp" name="no_hp" class="form-control" placeholder="Contoh: 081234567890" required>
+                </div>
+
+                <!-- Input Type Date (Tanggal Booking) -->
+                <div class="form-group">
+                    <label for="tanggal_booking">Tanggal Booking:</label>
+                    <input type="date" id="tanggal_booking" name="tanggal_booking" class="form-control" required>
+                </div>
+
+                <!-- Checkbox Kategori Menu & Textbox Jumlah Item -->
+                <div class="form-group">
+                    <label>Pilihan Kategori Menu & Jumlah Item:</label>
+                    
+                    <div class="checkbox-item-row">
+                        <input type="checkbox" id="kategori_makanan" name="kategori[]" value="Makanan">
+                        <label for="kategori_makanan">Makanan</label>
+                        <input type="number" name="jumlah_makanan" class="form-control input-qty" placeholder="Jumlah" min="1">
+                    </div>
+
+                    <div class="checkbox-item-row">
+                        <input type="checkbox" id="kategori_minuman" name="kategori[]" value="Minuman">
+                        <label for="kategori_minuman">Minuman</label>
+                        <input type="number" name="jumlah_minuman" class="form-control input-qty" placeholder="Jumlah" min="1">
+                    </div>
+
+                    <div class="checkbox-item-row">
+                        <input type="checkbox" id="kategori_dessert" name="kategori[]" value="Dessert">
+                        <label for="kategori_dessert">Dessert</label>
+                        <input type="number" name="jumlah_dessert" class="form-control input-qty" placeholder="Jumlah" min="1">
+                    </div>
+                </div>
+
+                <!-- Radio Button Pilihan Pembayaran -->
+                <div class="form-group">
+                    <label>Metode Pembayaran:</label>
+                    <div class="payment-options">
+                        <label class="payment-option-label">
+                            <input type="radio" name="metode_pembayaran" value="Kartu Debit/Kredit" required>
+                            Kartu Debit/Kredit 
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="payment-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="payment-logo">
+                        </label>
+                        <label class="payment-option-label">
+                            <input type="radio" name="metode_pembayaran" value="Dompet Digital" required>
+                            Dompet Digital (GoPay/OVO/Dana/LinkAja/QRIS)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Textbox Nomor Kartu / Pilihan Dompet Digital -->
+                <div class="form-group">
+                    <label for="detail_pembayaran">Nomor Kartu / Pilihan Dompet Digital:</label>
+                    <input type="text" id="detail_pembayaran" name="detail_pembayaran" class="form-control" placeholder="Masukkan nomor kartu atau akun dompet digital" required>
+                </div>
+
+                <!-- Button Submit -->
+                <div class="form-group" style="margin-bottom: 0;">
+                    <button type="submit" class="btn btn-primary" style="border: none; cursor: pointer; width: 100%;">Kirim Pesanan</button>
+                </div>
+
+            </form>
+        </div>
     </section>
 
     <section>
